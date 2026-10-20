@@ -1,0 +1,21 @@
+# نظام التشغيل
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# المحرّرات
+.vscode/
+.idea/
+*.swp
+
+# السجلات
+*.log
+npm-debug.log*
+
+# ملفات النظام
+.env
+.env.local
+
+# ملفات المشرف المحلي (اختياري)
+serve.ps1
+publish.ps1
