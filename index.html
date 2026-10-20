@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دار العربية | منصة تعلّم اللغة العربية</title>
+<meta name="description" content="موقع شامل لتعلّم اللغة العربية: القواعد، المفردات، المترادفات والمتضادات، الإعراب، وفيديوهات يوتيوب مع محرّك بحث ذكي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800&family=Reem+Kufi:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ===== شريط علوي ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#/home" class="brand" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="42" height="42">
+          <defs>
+            <linearGradient id="gBrand" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e6c15f"/><stop offset="1" stop-color="#b8862f"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 6c-6 6-14 8-22 8v34c8 0 16-2 22-8 6 6 14 8 22 8V14c-8 0-16-2-22-8z" fill="url(#gBrand)"/>
+          <path d="M32 6v42" stroke="#0b3d33" stroke-width="3"/>
+          <circle cx="32" cy="56" r="4" fill="#0b3d33"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>دار العربية</strong>
+        <small>تعلّم • اتقان • إتقان</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+      <a href="#/home" data-nav="home">الرئيسية</a>
+      <a href="#/letters" data-nav="letters">الحروف</a>
+      <a href="#/grammar" data-nav="grammar">القواعد</a>
+      <a href="#/vocab" data-nav="vocab">المفردات</a>
+      <a href="#/synonyms" data-nav="synonyms">الضد والعكس</a>
+      <a href="#/irab" data-nav="irab">الإعراب</a>
+      <a href="#/videos" data-nav="videos">فيديوهات</a>
+      <a href="#/images" data-nav="images">الصور</a>
+    </nav>
+
+    <div class="header-actions">
+      <label class="speed-wrap" title="سرعة النطق">
+        <span class="speed-ico" aria-hidden="true">🔈</span>
+        <select id="speedSel" class="speed-sel" aria-label="سرعة النطق">
+          <option value="0.35">بطيء جدًا</option>
+          <option value="0.5">بطيء</option>
+          <option value="0.65" selected>واضح</option>
+          <option value="0.85">عادي</option>
+          <option value="1">سريع</option>
+        </select>
+      </label>
+      <button class="icon-btn" id="searchBtn" aria-label="بحث" title="بحث (Ctrl + K)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== شريط البحث العلوي السريع ===== -->
+<div class="quickbar" id="quickBar">
+  <div class="container quickbar-inner">
+    <input type="search" id="quickSearch" placeholder="ابحث في كل شيء: قاعدة، كلمة، إعراب، فيديو…" aria-label="بحث سريع">
+    <button class="qbtn" id="quickSearchGo">بحث</button>
+  </div>
+</div>
+
+<!-- ===== المحتوى ===== -->
+<main id="app" class="app-main" tabindex="-1"></main>
+
+<!-- ===== التذييل ===== -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="fcol">
+      <h4>دار العربية</h4>
+      <p>منصة شاملة لتعلّم اللغة العربية وقواعدها ومفرداتها، مع أمثلة إعراب مدعّمة بالصور، ومكتبة فيديوهات تعليمية.</p>
+      <div class="social">
+        <a href="#/videos" title="فيديوهات">▶</a>
+        <a href="#/grammar" title="قواعد">📖</a>
+        <a href="#/vocab" title="مفردات">🗂️</a>
+        <a href="#/search" title="بحث">🔍</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>أقسام الموقع</h4>
+      <ul>
+        <li><a href="#/letters">الحروف العربية وأصواتها</a></li>
+        <li><a href="#/grammar">قواعد النحو والصرف</a></li>
+        <li><a href="#/vocab">بنك المفردات</a></li>
+        <li><a href="#/synonyms">المترادفات والمتضادات</a></li>
+        <li><a href="#/irab">أمثلة الإعراب المصوّرة</a></li>
+        <li><a href="#/videos">مكتبة الفيديو</a></li>
+        <li><a href="#/images">معرض الصور</a></li>
+        <li><a href="#/search">البحث الشامل</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>اختصارات مفيدة</h4>
+      <ul class="keys">
+        <li><kbd>Ctrl</kbd> + <kbd>K</kbd> فتح البحث</li>
+        <li><kbd>Esc</kbd> إغلاق النوافذ</li>
+        <li><kbd>↑</kbd> <kbd>↓</kbd> تصفّح نتائج البحث</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© <span id="year"></span> دار العربية — صُمِّم بشغف لمحبّي العربية 🌙</div>
+  </div>
+</footer>
+
+<!-- ===== نافذة الفيديو ===== -->
+<div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="مشغّل الفيديو">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box">
+    <button class="modal-close" data-close aria-label="إغلاق">✕</button>
+    <div class="modal-head">
+      <h3 id="videoTitle">مشغّل الفيديو</h3>
+      <p id="videoSub">يمكنك لصق رابط فيديو يوتيوب لمشاهدته مباشرة هنا</p>
+    </div>
+    <div class="player-wrap" id="playerWrap">
+      <div class="player-placeholder" id="playerPlaceholder">
+        <div class="ph-icon">▶</div>
+        <p>اختر فيديو من المكتبة أو الصق رابطًا أدناه</p>
+      </div>
+    </div>
+    <div class="url-bar">
+      <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." aria-label="رابط الفيديو">
+      <button class="qbtn" id="playUrlBtn">تشغيل</button>
+    </div>
+    <div class="suggest" id="videoSuggest"></div>
+  </div>
+</div>
+
+<!-- ===== لوحة البحث الكاملة ===== -->
+<div class="search-overlay" id="searchOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="البحث">
+  <div class="search-panel">
+    <div class="sp-input">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="search" id="overlaySearch" placeholder="ابحث… مثال: المفعول به، جميل، ضد، إعراب" autocomplete="off">
+      <button class="esc" data-close-search>إغلاق</button>
+    </div>
+    <div class="sp-filters" id="spFilters">
+      <button class="chip active" data-filter="all">الكل</button>
+      <button class="chip" data-filter="letter">حرف</button>
+      <button class="chip" data-filter="grammar">قواعد</button>
+      <button class="chip" data-filter="vocab">مفردات</button>
+      <button class="chip" data-filter="syn">ضد وعكس</button>
+      <button class="chip" data-filter="irab">إعراب</button>
+      <button class="chip" data-filter="video">فيديو</button>
+    </div>
+    <div class="sp-results" id="spResults"></div>
+  </div>
+</div>
+
+<!-- ===== تنبيه عائم ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== زر الصعود ===== -->
+<button class="to-top" id="toTop" aria-label="العودة للأعلى">↑</button>
+
+<script src="js/data-grammar.js"></script>
+<script src="js/data-vocab.js"></script>
+<script src="js/data-irab.js"></script>
+<script src="js/data-letters.js"></script>
+<script src="js/data-yt.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/images.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
