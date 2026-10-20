@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الصفحة غير موجودة — دار العربية</title>
+<style>
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100vh; display:grid; place-items:center; text-align:center;
+    font-family:'Cairo','Amiri',system-ui,'Segoe UI',sans-serif; color:#1d2a24;
+    background:#faf6ec;
+    background-image:radial-gradient(circle at 12% 8%, rgba(212,165,55,.12), transparent 34%),
+                     radial-gradient(circle at 88% 4%, rgba(20,97,79,.10), transparent 32%);
+  }
+  .box{
+    background:#fffdf8; border:1px solid #e5dcc6; border-radius:28px; padding:44px 34px;
+    max-width:460px; box-shadow:0 18px 50px rgba(12,45,36,.16);
+  }
+  .ico{ font-size:2.8rem; margin-bottom:8px; }
+  h1{ font-family:'Reem Kufi','Cairo',serif; color:#0b3d33; margin:0 0 10px; font-size:1.7rem; }
+  p{ color:#4a5a52; margin:0 0 24px; line-height:1.9; }
+  a.btn{
+    display:inline-block; padding:13px 28px; border-radius:999px; font-weight:700;
+    color:#0b3d33; text-decoration:none; background:linear-gradient(135deg,#e6c15f,#d4a537);
+    box-shadow:0 8px 22px rgba(212,165,55,.35);
+  }
+  a.btn:hover{ filter:brightness(1.06); transform:translateY(-2px); }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="ico">🧭</div>
+    <h1>الصفحة غير موجودة</h1>
+    <p>جارٍ العودة إلى الصفحة الرئيسية… إن لم تُنتقل تلقائيًا فاضغط الزر.</p>
+    <a class="btn" href="./">العودة للرئيسية</a>
+  </div>
+
+  <script>
+    // البحث عن جذر الموقع بفحص استجابة index.html في المستويات الأعلى
+    (function () {
+      var parts = location.pathname.split('/').filter(Boolean);
+      var tries = [];
+      for (var i = parts.length; i >= 0; i--) {
+        tries.push('/' + parts.slice(0, i).join('/') + '/index.html');
+      }
+      tries.push('/index.html');
+      (function next(k) {
+        if (k >= tries.length) { location.replace('./'); return; }
+        fetch(tries[k], { method: 'HEAD' })
+          .then(function (r) { if (r.ok) { location.replace(tries[k].replace(/index\.html$/, '') + location.hash); } else { next(k + 1); } })
+          .catch(function () { next(k + 1); });
+      })(0);
+    })();
+  </script>
+</body>
+</html>
